@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://crwc1a3l52lsv"]
+
+[ext_resource type="Script" path="res://scripts/south.gd" id="1_m4yq3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkcf1"]
+
+[node name="south" type="RigidBody2D"]
+mass = 0.01
+gravity_scale = 0.0
+linear_damp = 2.0
+script = ExtResource("1_m4yq3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fkcf1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 30.0
+offset_bottom = 30.0
+scale = Vector2(0.490164, 0.505243)
+color = Color(1, 0.372549, 0.372549, 1)

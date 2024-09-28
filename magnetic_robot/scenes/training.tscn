@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvvfi5wy3mwx"]
+
+[ext_resource type="PackedScene" uid="uid://byat7t8t8avea" path="res://scenes/field.tscn" id="1_g4wxo"]
+[ext_resource type="Script" path="res://addons/godot_rl_agents/sync.gd" id="2_0vokc"]
+
+[node name="training" type="Node2D"]
+
+[node name="field" parent="." instance=ExtResource("1_g4wxo")]
+scale = Vector2(0.25, 0.25)
+
+[node name="field2" parent="." instance=ExtResource("1_g4wxo")]
+position = Vector2(293, -2)
+scale = Vector2(0.25, 0.25)
+
+[node name="field3" parent="." instance=ExtResource("1_g4wxo")]
+position = Vector2(587, 5)
+scale = Vector2(0.25, 0.25)
+
+[node name="field4" parent="." instance=ExtResource("1_g4wxo")]
+position = Vector2(868, 2)
+scale = Vector2(0.25, 0.25)
+
+[node name="field5" parent="." instance=ExtResource("1_g4wxo")]
+position = Vector2(-2, 166)
+scale = Vector2(0.25, 0.25)
+
+[node name="field6" parent="." instance=ExtResource("1_g4wxo")]
+position = Vector2(291, 164)
+scale = Vector2(0.25, 0.25)
+
+[node name="field7" parent="." instance=ExtResource("1_g4wxo")]
+position = Vector2(585, 171)
+scale = Vector2(0.25, 0.25)
+
+[node name="field8" parent="." instance=ExtResource("1_g4wxo")]
+position = Vector2(866, 168)
+scale = Vector2(0.25, 0.25)
+
+[node name="field9" parent="." instance=ExtResource("1_g4wxo")]
+position = Vector2(0, 326)
+scale = Vector2(0.25, 0.25)
+
+[node name="field10" parent="." instance=ExtResource("1_g4wxo")]
+position = Vector2(293, 324)
+scale = Vector2(0.25, 0.25)
+
+[node name="field11" parent="." instance=ExtResource("1_g4wxo")]
+position = Vector2(587, 331)
+scale = Vector2(0.25, 0.25)
+
+[node name="field12" parent="." instance=ExtResource("1_g4wxo")]
+position = Vector2(868, 328)
+scale = Vector2(0.25, 0.25)
+
+[node name="field13" parent="." instance=ExtResource("1_g4wxo")]
+position = Vector2(-2, 492)
+scale = Vector2(0.25, 0.25)
+
+[node name="field14" parent="." instance=ExtResource("1_g4wxo")]
+position = Vector2(291, 490)
+scale = Vector2(0.25, 0.25)
+
+[node name="field15" parent="." instance=ExtResource("1_g4wxo")]
+position = Vector2(585, 497)
+scale = Vector2(0.25, 0.25)
+
+[node name="field16" parent="." instance=ExtResource("1_g4wxo")]
+position = Vector2(866, 494)
+scale = Vector2(0.25, 0.25)
+
+[node name="Sync" type="Node" parent="."]
+script = ExtResource("2_0vokc")

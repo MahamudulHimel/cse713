@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsy4tyep0wxxi"]
+
+[ext_resource type="PackedScene" uid="uid://b2lj5bxjpncm6" path="res://scenes/north.tscn" id="1_aqoyj"]
+[ext_resource type="PackedScene" uid="uid://crwc1a3l52lsv" path="res://scenes/south.tscn" id="2_d0sd1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eiajo"]
+size = Vector2(39.5, 40)
+
+[node name="robot" type="Node2D"]
+
+[node name="south" parent="." instance=ExtResource("2_d0sd1")]
+position = Vector2(-5, 20)
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(1, 20)
+node_a = NodePath("../RigidBody2D")
+node_b = NodePath("../south")
+angular_limit_enabled = true
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+mass = 0.05
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_eiajo")
+
+[node name="ColorRect" type="ColorRect" parent="RigidBody2D"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="north" parent="." instance=ExtResource("1_aqoyj")]

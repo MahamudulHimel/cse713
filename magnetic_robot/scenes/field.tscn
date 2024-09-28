@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://byat7t8t8avea"]
+
+[ext_resource type="PackedScene" uid="uid://klp3t34s1jwl" path="res://scenes/magnets.tscn" id="1_rbpxg"]
+[ext_resource type="Script" path="res://scripts/field.gd" id="1_tru2y"]
+[ext_resource type="PackedScene" uid="uid://ccfm6mwinos1l" path="res://scenes/target.tscn" id="4_87whs"]
+[ext_resource type="PackedScene" uid="uid://b2lj5bxjpncm6" path="res://scenes/north.tscn" id="4_yc7dh"]
+[ext_resource type="PackedScene" uid="uid://cpswgai7dtrmn" path="res://scenes/box.tscn" id="5_jvij3"]
+[ext_resource type="PackedScene" uid="uid://bvgr6mrua26wk" path="res://scenes/wall.tscn" id="6_c87tv"]
+[ext_resource type="Script" path="res://scripts/AIController2D.gd" id="7_i0cnw"]
+[ext_resource type="Script" path="res://addons/godot_rl_agents/sync.gd" id="8_jxi1j"]
+
+[node name="field" type="Node2D"]
+script = ExtResource("1_tru2y")
+
+[node name="magnets" parent="." instance=ExtResource("1_rbpxg")]
+
+[node name="AIController2D" type="Node2D" parent="magnets"]
+position = Vector2(-1, 0)
+script = ExtResource("7_i0cnw")
+reset_after = 2500
+
+[node name="north" parent="." instance=ExtResource("4_yc7dh")]
+position = Vector2(381, 119)
+
+[node name="target" parent="." instance=ExtResource("4_87whs")]
+position = Vector2(951, 283)
+scale = Vector2(1.81924, 1.81924)
+
+[node name="wall" parent="." instance=ExtResource("6_c87tv")]
+position = Vector2(-15, -27)
+scale = Vector2(29.591, 0.82021)
+
+[node name="wall2" parent="." instance=ExtResource("6_c87tv")]
+position = Vector2(-6, 631)
+scale = Vector2(29.231, 0.82021)
+
+[node name="wall3" parent="." instance=ExtResource("6_c87tv")]
+position = Vector2(-16, 653)
+rotation = -1.57053
+scale = Vector2(16.4435, 0.780853)
+
+[node name="wall4" parent="." instance=ExtResource("6_c87tv")]
+position = Vector2(1139, 645)
+rotation = -1.57053
+scale = Vector2(16.3635, 0.780853)
+
+[node name="Sync" type="Node" parent="."]
+script = ExtResource("8_jxi1j")
+action_repeat = 4
+
+[node name="box" parent="." instance=ExtResource("5_jvij3")]
+position = Vector2(540, 242)
