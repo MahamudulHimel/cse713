@@ -1,3 +1,5 @@
+pip install godot-rl
+
 open "run.bat" to run the simulation of trained model
 
 to open the godot project,
